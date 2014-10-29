@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<!-- /******************************************************/-->
+<!-- EBONIE UI (LOOK AND FEEL) -->
+<!-- Copyright 2012 @cdvlabs All Rights Reserved -->
+<!-- http://cproscodedev.com-->
+<!-- @author Ifeora Okechukwu  -->
+<!-- @disclamer -  Controlled Redistribution and Modification -->
+<!-- /******************************************************/ -->
+      
+
+<synth>
+
+<!-- /==============================================================================================/ -->
+
+  <!-- Rendered Images are enhanced for optimum screen appearance and application performance-->
+  
+  <!--All Styles are applied as at runtime-->
+  
+  <!--Styles for heavyweight components are declared first before those for lightweight and custom components -->
+
+<!-- /==============================================================================================/ -->  
+  
+  <!-- Java Bean Objects for persistence throughout componentization -->
+  
+  <object id="EPainter" class="com.swingx.plaf.ebonie.EboniePainter" />
+  
+  <object class="java.awt.Color" id="focus">
+    
+      <int>50</int>    <!-- Red -->
+      <int>50</int>    <!-- Green -->
+      <int>111</int>   <!-- Blue -->
+      <int>255</int>   <!-- Alpha (Transparency)-->
+	  
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonBorderColorEnabled">
+  
+      <int>50</int>    <!-- Red -->
+      <int>50</int>    <!-- Green -->
+      <int>111</int>   <!-- Blue -->
+      <int>255</int>   <!-- Alpha (Transparency)-->
+	  
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonBorderColorPressed">
+  
+      <int>50</int>    <!-- Red -->
+      <int>50</int>    <!-- Green -->
+      <int>111</int>   <!-- Blue -->
+      <int>255</int>   <!-- Alpha (Transparency)-->
+	  
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonBorderColorMouseOver">
+  
+      <int>50</int>    <!-- Red -->
+      <int>50</int>    <!-- Green -->
+      <int>111</int>   <!-- Blue -->
+      <int>255</int>   <!-- Alpha (Transparency)-->
+	  
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonBorderColorDisabled">
+  
+      <int>50</int>    <!-- Red -->
+      <int>50</int>    <!-- Green -->
+      <int>111</int>   <!-- Blue -->
+      <int>255</int>   <!-- Alpha (Transparency)-->
+	  
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonStartColor">
+        
+		<int>255</int>   <!-- Red -->
+        <int>255</int>   <!-- Green -->
+        <int>255</int>   <!-- Blue -->
+	    <int>255</int>   <!-- Alpha (Transparency)-->	
+		
+  </object>
+  <object class="javax.swing.plaf.ColorUIResource" id="buttonEndColor">
+  
+        <int>0</int>     <!-- Red -->
+        <int>0</int>     <!-- Green -->
+        <int>255</int>   <!-- Blue -->
+		<int>255</int>   <!-- Alpha (Transparency)-->
+		
+  </object>
+  
+  <defaultsProperty key="Button.gradient.startColor" type="idref" value="buttonStartColor" />
+  <defaultsProperty key="Button.gradient.endColor" type="idref" value="buttonEndColor" />
+  <defaultsProperty key="Button.border.color.enabled" type="idref" value="buttonBorderColorEnabled"/>
+  <defaultsProperty key="Button.border.color.mouseover" type="idref" value="buttonBorderColorMouseOver"/>
+  <defaultsProperty key="Button.border.color.pressed" type="idref" value="buttonBorderColorPressed"/>
+  <defaultsProperty key="Button.border.color.disabled" type="idref" value="buttonBorderColorDisabled"/>
+  <defaultsProperty key="Button.arc.width" type="integer" value="9"/>
+  <defaultsProperty key="InternalFrame.main.color" type="idref" value="InternalFrame_MainColor"/>
+  
+<style id="defaults"> 
+  
+  <!-- Custom Defaults for all components -->
+
+     <opaque value="true" />
+
+      <font name="Arial" size="10" style="PLAIN"/>
+
+       <state value="DEFAULT">
+
+         <color value="#CCCCCC" type="FOREGROUND"/>
+
+         <color value="#FFFFFF" type="BACKGROUND" />
+
+         <color idref="focus" type="FOCUS" />
+
+       </state>
+
+   </style> 
+
+   <bind style="defaults" type="region" key=".*"/>
+  
+
+  <!--comboBoxListSkin declarations-->
+
+
+
+ <style id="comboboxlist"> 
+
+     <opaque value="true"/>
+
+        <insets right="3" bottom="3" left="3" top="3"/>
+ 
+        <state value="ENABLED">
+ 
+            <color type="TEXT_FOREGROUND" value="#000000"/> 
+
+        </state> 
+
+        <state value="DISABLED"> 
+
+            <color type="TEXT_FOREGROUND" value="#999999"/> 
+
+        </state> 
+
+        <state value="MOUSE_OVER AND SELECTED"> 
+
+            <color type="TEXT_FOREGROUND" value="#CC6600"/> 
+
+            <color type="TEXT_BACKGROUND" value="#FFEEDD"/> 
+
+        </state>
+ 
+ </style>
+
+ 
+ <bind style="comboboxlist" type="name" key="ComboBox.listRenderer" />
+
+
+<!--combboxtextfieldSkin declarations-->
+ 
+ 
+ <style id="comboboxfield"> 
+
+     <opaque value="true"/>
+     
+       <color type="TEXT_FOREGROUND" value="#000000"/> 
+            
+       <font name="Myriad Pro" size="12"  style="PLAIN"/>
+ 
+        <state value="ENABLED">
+ 
+          <imagePainter method="textFieldBorder" path="image/combo_textbgs.png" sourceInsets="0 0 0 0" paintCenter="false" />
+
+             <insets top="0" left="0" bottom="0" right="0"/>           
+
+        </state> 
+
+      <state value="DISABLED"> 
+
+          <imagePainter method="textFieldBorder" path="image/combo_textbgs.png" sourceInsets="0 0 0 0" paintCenter="false" />
+
+            <insets top="0" left="0" bottom="0" right="0"/>
+
+        </state>
+ 
+ </style>
+
+ 
+ <bind style="comboboxfield" type="name" key="ComboBox.textField" />
+
+
+
+
+  <!--textFieldSkin declarations-->
+
+
+  <style value="textfield">
+  
+  
+     <opaque value="true" />
+    
+          <state value="ENABLED"> 
+
+         <!--<imagePainter method="textFieldBorder" path="images/text-bd_enabled.png" center="false" stretch="true" paintCenter="false" sourceInsets="1 1 1 1"/> -->
+
+         <painter idref="SPainter" method="#textFieldBackground" />
+		 
+		 <painter idref="SPainter" method="#textFieldBorder" />
+		 
+		 <color value="#FFFFFF" type="TEXT_BACKGROUND"/> 
+
+         <color value="#000000" type="TEXT_FOREGROUND"/> 
+
+         <color value="#FFFFFF" type="BACKGROUND"/> 
+
+         </state> 
+
+     <state value="DISABLED"> 
+
+         <imagePainter method="textFieldBorder" path="images/text-bd_disabled.png" center="false" stretch="true" paintCenter="false" sourceInsets="1 1 1 1"/>
+
+          <color value="#999999" type="TEXT_FOREGROUND"/> 
+
+          <color value="#F0F0F0" type="BACKGROUND"/> 
+
+        </state> 
+
+         <state value="SELECTED"> 
+
+       <color value="#FFFFFF" type="TEXT_FOREGROUND"/> 
+
+        <color value="#BEA08C" type="TEXT_BACKGROUND"/> 
+
+     </state> 
+
+
+     </style>
+
+   
+    <bind style="textfield" key="TextField" type="region" />
+  
+  
+  
+
+ 
+  <!-- tabbedPaneSkin  declarations -->
+  
+  
+  
+  
+	<style id="tabbedpane">
+
+    <opaque value="true" />
+    
+		<property key="TabbedPane.textIconGap" type="integer" value="2"/>
+    
+	</style>
+  
+	<bind style="tabbedpane" type="region" key="TabbedPane" />
+
+
+ 
+<!--  buttonSkin declaration-->
+
+
+
+   <style id="textbutton">
+
+      <opaque value="true" /> 
+
+      <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+      <painter idref="lafpainter" method="buttonBorder" />
+
+      <state value="ENABLED">
+
+
+      </state>
+
+      <state value="DISABLED">
+
+
+      </state>
+
+      <state value="MOUSE_OVER">
+
+
+      </state>
+
+      <state value="SELECTED">
+
+
+      </state>
+
+   </style>
+
+   <bind style="textbutton" type="region" key="Button" />
+
+
+	
+
+  <!-- arrowbuttonComboSkin declarations-->
+
+
+  <style id="arrowStyle">
+  
+    <state>
+	
+      <color type="BACKGROUND" value="#00ffff" />
+	  
+    </state>
+	
+    <state value="ENABLED">
+	
+      <imagePainter method="ArrowButtonForeground" path="../Images/Arrow.png" stretch="false" sourceInsets="0 0 0 0"  direction="south"/>
+    
+	</state>
+
+    <state value="MOUSE_OVER">
+      
+	  <imagePainter method="ArrowButtonForeground" path="../Images/Arrow.png" stretch="false" sourceInsets="0 0 0 0" direction="south"/>
+    
+	</state>
+
+    <state value="PRESSED">
+      <imagePainter method="ArrowButtonForeground" path="../Images/Arrow.png" stretch="false" sourceInsets="0 0 0 0" direction="south"/>
+    </state>
+
+    <state value="DISABLED">
+      <imagePainter method="ArrowButtonForeground" path="../Images/Arrow.png" stretch="false" sourceInsets="0 0 0 0" direction="south"/>
+    </state>
+    
+  </style>
+  
+  <bind style="arrowStyle" type="name" key="ComboBox.arrowButton" />	
+
+
+
+
+  <!--arrowButtonSkin declarations-->
+  
+
+  <style id="arrowbutton">
+
+    <opaque value="true" />
+
+    <property value="18" type="integer" key="ArrowButton.size"/>
+    
+    <imagePainter method="arrowButtonForeground" path="images/arrow-up.png" sourceInsets="0 0 0 0" stretch="false" direction="north" />
+    
+    <imagePainter method="arrowButtonForeground" path="images/arrow-down.png" sourceInsets="0 0 0 0" stretch="false" direction="south" />
+    
+    <imagePainter method="arrowButtonForeground" path="images/arrow-left.png" sourceInsets="0 0 0 0" stretch="false" direction="west" />
+    
+    <imagePainter method="arrowButtonForeground" path="images/arrow-right.png" sourceInsets="0 0 0 0" stretch="false" direction="east" />
+    
+  </style>
+
+  <bind key="ArrowButton" type="region" style="arrowbutton" />
+
+
+
+
+  <!-- tabbedPaneContentSkin declarations -->
+  
+  
+	<style id="tabbedpanecontent">
+    
+	</style>
+  
+	<bind style="tabbedpanecontent" type="region" key="TabbedPaneContent" />
+
+	
+	
+  
+  
+	
+	
+	<!-- The style for the tabs of tabbed pane. -->
+	
+	
+	
+	
+	<style id="tabbedpanetab">
+	
+		<insets top="5" left="5" bottom="2" right="5"/>
+		
+		
+		<imagePainter method="tabbedPaneTabBorder" path="images/tab_normal.png" sourceInsets="0 1 0 1" paintCenter="true" stretch="true" center="false"/>
+		
+		
+		<state value="ENABLED">
+		
+			<imagePainter method="tabbedPaneTabBackground" path="images/tab_enable.png" sourceInsets="6 5 3 5" paintCenter="true" stretch="true" center="false"/>
+		
+		</state>
+		
+		<state value="DISABLED">
+		
+			<imagePainter method="tabbedPaneTabBackground" path="images/tab_disable.png" sourceInsets="6 5 3 5" paintCenter="true" stretch="true" center="false"/>
+		
+		</state>
+		
+		<state value="SELECTED">
+		
+			<imagePainter method="tabbedPaneTabBackground" path="images/tab_selected.png" sourceInsets="6 5 3 5" paintCenter="true" stretch="true" center="false"/>
+		
+		</state>
+		
+	</style>
+	
+	<bind style="tabbedpanetab" type="region" key="TabbedPaneTab" />
+
+	
+	
+	
+	
+	<!-- The style for the tab area of tabbed pane. -->
+	
+	
+	
+	<style id="tabbedpanetabarea">
+    
+		<insets top="3" left="5" bottom="0" right="5" />
+    
+	</style>
+  
+  
+	<bind style="tabbedpanetabarea" type="region" key="TabbedPaneTabArea" />
+
+	
+	
+	
+	
+
+	<!-- The style for tool tip. -->
+	
+	
+	
+	<style id="tooltip">
+	
+	
+		<opaque value="true"/>
+		
+		<state>
+		
+			<color type="BACKGROUND" value="#F0EBDF"/>
+			
+		</state>
+		<insets top="5" left="5" bottom="5" right="5"/>
+		
+		<imagePainter method="toolTipBorder" path="images/tooltip.png" sourceInsets="1 1 1 1" paintCenter="true" stretch="true" center="false"/>
+		
+		<state value="ENABLED">
+		
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			
+		</state>
+		
+		<state value="DISABLED">
+		
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+			
+		</state>
+		
+	</style>
+	
+	<bind style="tooltip" type="region" key="ToolTip" />
+	
+	
+	
+	<!-- toolbarSkin declaration -->
+
+	
+	
+	<style id="toolbar">
+	
+        <object id="SPainter" class="com.influxebrowser.gui.plaf.ui.SBitPainter" />
+  
+        <painter idref="lafpainter" method="toolBarBackground" />
+
+
+         <imageIcon id="Toolbar_Handle_Icon" path="images/toolbar_Hicon.png"/> 
+  
+         <property value="Toolbar_Handle_Icon" type="idref" key="ToolBar.handleIcon"/>
+		
+    </style>
+	
+    <bind style="toolbar" type="region" key="ToolBar"/>
+	
+	
+	
+	<!-- toolbarContentSkin declaration -->
+	
+	
+	
+    <style id="toolbarcontent">
+	
+        <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+        <painter idref="lafpainter" method="toolBarContentBorder" />
+		
+    </style>
+	
+    <bind style="toolbarcontent" type="region" key="ToolBarContent"/>
+	
+	
+	
+
+	<!-- formattedTextFieldSkin declaration -->
+  
+  
+  
+	<style id="formattedtextfield">
+	
+		<insets top="3" left="3" bottom="3" right="3"/>
+		
+		<opaque value="true"/>
+		
+		<state value="ENABLED">
+		
+			<imagePainter method="formattedTextFieldBorder" path="images/ftextfield_enabled.png" sourceInsets="1 1 1 1" paintCenter="true" stretch="true" center="false"/>
+      
+			<color type="TEXT_BACKGROUND" value="#FFFFFF"/>
+      
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+      
+			<color type="BACKGROUND" value="#FFFFFF"/>
+      
+		</state>
+    
+		<state value="DISABLED">
+      
+			<imagePainter method="formattedTextFieldBorder" path="images/ftextfield_disabled.png" sourceInsets="1 1 1 1" paintCenter="true" stretch="true" center="false"/>
+      
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+      
+			<color type="BACKGROUND" value="#F0F0F0"/>
+      
+		</state>
+    
+		<state value="SELECTED">
+      
+			<color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+      
+			<color type="TEXT_BACKGROUND" value="#BEA08C"/>
+      
+		</state>
+    
+	</style>
+  
+	<bind style="formattedtextfield" type="region" key="FormattedTextField" />
+
+	
+	
+	
+	
+	<!-- passwordFieldSkin declarations -->
+	
+	
+	<style id="passwordfield">
+	
+	
+		<insets top="3" left="3" bottom="3" right="3"/>
+		
+		<opaque value="true" />
+		
+		<state value="ENABLED">
+		
+			<imagePainter method="passwordFieldBorder" path="images/passfield_enable.png" sourceInsets="1 1 1 1" paintCenter="true" stretch="true" center="false"/>
+      
+			<color type="TEXT_BACKGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			
+			<color type="BACKGROUND" value="#FFFFFF"/>
+			
+		</state>
+		
+		<state value="DISABLED">
+		
+			<imagePainter method="passwordFieldBorder" path="images/passfield_disable.png" sourceInsets="1 1 1 1" paintCenter="true" stretch="true" center="false"/>
+			
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+			
+			<color type="BACKGROUND" value="#F0F0F0"/>
+			
+		</state>
+		
+		<state value="SELECTED">
+		
+			<color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_BACKGROUND" value="#BEA08C"/>
+			
+		</state>
+    
+	</style>
+  
+	<bind style="passwordfield" type="region" key="PasswordField" />
+
+	
+	
+	
+	
+	
+	<!-- textAreaSkin declaration -->
+	
+	
+	
+	
+	<style id="textarea">
+    
+	    <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+        <painter idref="lafpainter" method="textAreaBorder" />
+
+        <painter idref="lafpainter" method="textAreaBackground" /> 
+    
+		<insets top="3" left="3" bottom="3" right="3"/>
+		
+		<opaque value="true"/>
+		
+		<state value="ENABLED">
+		
+			<color type="TEXT_BACKGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			
+			<color type="BACKGROUND" value="#FFFFFF"/>
+			
+		</state>
+		
+		<state value="DISABLED">
+		
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+			
+			<color type="BACKGROUND" value="#F0F0F0"/>
+			
+		</state>
+		
+		<state value="SELECTED">
+		
+			<color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_BACKGROUND" value="#BEA08C"/>
+			
+		</state>
+		
+	</style>
+	
+	<bind style="textarea" type="region" key="TextArea" />
+	
+	
+	
+	<!-- The style for text pane component. -->
+	
+	
+	
+	
+	<style id="textpane">
+	
+		<state value="ENABLED">
+		
+			<color type="TEXT_BACKGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+			
+			<color type="BACKGROUND" value="#FFFFFF"/>
+			
+		</state>
+		
+		<state value="DISABLED">
+		
+			<color type="TEXT_FOREGROUND" value="#999999"/>
+			
+			<color type="BACKGROUND" value="#F0F0F0"/>
+			
+	   </state>
+	   
+	   <state value="SELECTED">
+	   
+			<color type="TEXT_FOREGROUND" value="#FFFFFF"/>
+			
+			<color type="TEXT_BACKGROUND" value="#BEA08C"/>
+			
+	   </state>
+	   
+	</style>
+	
+	<bind style="textpane" type="region" key="TextPane" />
+  
+  
+
+
+
+  <!--labelSkin declarations-->
+
+
+  <style id="label">
+  
+     <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+     <painter idref="lafpainter" method="labelBackground" />
+ 
+      <opaque value="true" />     
+
+   <state value="DISABLED">
+
+       <font name="Myriad Pro" size="13" style="PLAIN" />
+     
+       <color value="#e0ffee" type="BACKGROUND"/>
+       
+       <color value="#cccccc" type="TEXT_FOREGROUND"/>
+
+
+    </state>
+
+    <state value="ENABLED">
+
+       <font name="Myriad Pro" size="13" style="PLAIN" />
+     
+       <color value="#e0ffee" type="BACKGROUND"/>
+       
+       <color value="#ffffff" type="TEXT_FOREGROUND"/>
+
+
+    </state>
+
+   </style>
+
+   <bind style="label" type="region" key="Label"/>
+
+
+
+
+
+  <!-- panelSkin declarations -->
+
+  <style id="panel">
+  
+    <painter idref="SPainter" method="#panelBorder" />
+
+  </style>
+
+  <bind style="panel" type="region" key="Panel" />  
+
+
+  <!-- internalFrameSkin declarations -->
+  
+	<style id="internalFrame">
+	
+		<insets top="3" left="3" bottom="3" right="3"/>
+		
+		<imageIcon id="InternalFrame_Icon" path="image/internalframeicon.png"/>
+		<property key="InternalFrame.icon" type="idref" value="InternalFrame_Icon"/>
+		
+		<painter idref="SPainter" method="#internalFrameBackground"/>
+		<painter idref="SPainter" method="#internalFrameBorder"/>
+	</style>
+	
+	<bind style="internalFrame" type="region" key="InternalFrame" />
+ 
+
+	<!-- The style for the title pane of internal frame. -->
+	<style id="Internal Frame Title Pane">
+		<property key="InternalFrameTitlePane.titleSpacing" type="integer" value="5"/>
+		<property key="InternalFrameTitlePane.maxFrameIconSize" type="dimension" value="24 24"/>
+		<imageIcon id="InternalFrame_MaximizeButton_Icon" path="resource/1204294372812_internal_frame_max_icon.png"/>
+		<property key="InternalFrameTitlePane.maximizeIcon" type="idref" value="InternalFrame_MaximizeButton_Icon"/>
+		<imageIcon id="InternalFrame_CloseButton_Icon" path="resource/1204294470625_internal_frame_close_icon.png"/>
+		<property key="InternalFrameTitlePane.closeIcon" type="idref" value="InternalFrame_CloseButton_Icon"/>
+		<imageIcon id="InternalFrame_RestoreButton_Icon" path="resource/1204295742281_internal_frame_restore_icon.png"/>
+		<property key="InternalFrameTitlePane.minimizeIcon" type="idref" value="InternalFrame_RestoreButton_Icon"/>
+		<imageIcon id="InternalFrame_MinimizeButton_Icon" path="resource/1204296642906_internal_frame_min_icon.png"/>
+		<property key="InternalFrameTitlePane.iconifyIcon" type="idref" value="InternalFrame_MinimizeButton_Icon"/>
+		<painter idref="EaSynthPainter" method="internalFrameTitlePaneBackground"/>
+		<painter idref="EaSynthPainter" method="internalFrameTitlePaneBorder"/>
+		<defaultsProperty key="EaSynth.internalframe.main.color" type="idref" value="InternalFrame_MainColor"/>
+		<insets top="2" left="2" bottom="2" right="2"/>
+	</style>
+	<bind style="Internal Frame Title Pane" type="region" key="InternalFrameTitlePane" />
+
+	<style id="Internal Frame Close Button">
+		<opaque value="true"/>
+		<state value="ENABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="PRESSED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="DISABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="Internal Frame Close Button" type="name" key="InternalFrameTitlePane.closeButton" />
+
+	<style id="Internal Frame Minimize Button">
+		<opaque value="true"/>
+		<state value="ENABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="PRESSED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="DISABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="Internal Frame Minimize Button" type="name" key="InternalFrameTitlePane.iconifyButton" />
+
+	<style id="Internal Frame Maximize Button">
+		<opaque value="true"/>
+		<state value="ENABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="PRESSED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+		<state value="DISABLED">
+			<color idref="InternalFrame_MainColor" type="BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="Internal Frame Maximize Button" type="name" key="InternalFrameTitlePane.maximizeButton" />
+
+  <!-- scrollbarSkin declarations -->
+  
+  
+  <style id="scrollbar">
+  
+      <!-- Ensure maximum scrollbar thumb size is set -->
+	  
+	  <property key="ScrollBar.minimumThumbSize" type="dimension" value="18 18"/>
+	  
+	  <!-- Ensure scrollbar thumb height is set -->
+	  
+	  <property key="ScrollBar.thumbHeight" type="integer" value="18"/>
+           
+     <insets top="6" left="6" bottom="6" right="6"/>
+  
+      <opaque value="true" />
+    
+   <state value="DISABLED">
+    
+     <imagePainter method="scrollbarBackground" path="images/scrollbar_da.png" sourceInsets="6 6 6 6" paintCenter="true" stretch="true" />
+       
+   </state>
+
+   <state value="ENABLED">
+
+      <imagePainter method="scrollbarBackground" path="images/scrollbar_en.png" sourceInsets="6 6 6 6" paintCenter="true" stretch="true" center="false"/>
+
+   </state>   
+     
+  </style>
+  
+  <bind style="scrollbar" type="region" key="ScrollBar"/>
+
+
+
+  <!--checkboxSkin declarations-->
+  
+  
+
+  <style id="checkbox">
+   
+     <opaque value="true" />
+
+         <imageIcon id="check_off" path="images/c_checked.png"/>
+
+         <imageIcon id="check_on" path="images/c_notchecked.png"/>
+		 
+		 <imageIcon id="check_over" path="images/c_over.png"/>
+		 
+		 <imageIcon id="check_select" path="images/c_selected.png"/>
+		  
+	     <imageIcon id="check_dis" path="images/c_notchecked.png"/>
+
+         <imageIcon id="check_on_dis" path="images/c_checked.png"/>
+		  
+		  <!-- Ensure margins -->
+		  
+		  <property key="CheckBox.margin" type="insets" value="2 2 2 2"/>
+          
+          <state value="ENABLED">
+
+               <property key="CheckBox.icon" type="idref" value="check_off"/>
+               
+          </state> 
+		  
+		  <state value="MOUSE_OVER">
+		  
+		     <property key="CheckBox.icon" type="idref" value="check_over"/>
+		  
+		  </state>
+		  
+		  <state value="SELECTED">
+
+               <property key="CheckBox.icon" type="idref" value="check_select"/>
+               
+          </state>
+
+		  
+		  <state value="DISABLED">
+
+               <property key="CheckBox.icon" type="idref" value="check_off_dis"/>
+               
+          </state>
+
+          <state value="PRESSED">
+
+               <property key="CheckBox.icon" type="idref" value="check_on"/>
+               
+          </state> 		  
+
+       <state value="ENABLED AND SELECTED">
+
+           <property key="CheckBox.icon" type="idref" value="check_on"/>
+
+       </state>
+
+       <state value="DISABLED AND SELECTED">
+
+           <property key="CheckBox.icon" type="idref" value="check_on_dis"/>
+
+       </state>
+
+  </style>
+
+
+  <bind style="checkbox" type="region" key="CheckBox"/>
+  
+  
+  
+  
+  
+  
+  <!-- radioSkin Declaration -->
+  
+  
+  <style id="radiobutton">
+   
+     <opaque value="true" />
+
+                  <property value="2 2 2 2" type="insets" key="RadioButton.margin"/>
+
+                  <imageIcon id="rcheck_off" path="images/r_checked.png"/>
+
+                  <imageIcon id="rcheck_on" path="images/r_notchecked.png"/>
+		  
+		  <imageIcon id="rcheck_disable" path="images/r_disabled.png"/>
+		  
+		  <imageIcon id="rcheck_over" path="images/r_over.png"/>
+		  
+		  <imageIcon id="rcheck_select" path="images/r_selected.png"/>
+          
+          <state value="ENABLED">
+
+               <property key="RadioButton.icon" type="idref" value="rcheck_off"/>
+               
+          </state>
+
+          <state value="MOUSE_OVER">
+
+               <property key="RadioButton.icon" type="idref" value="rcheck_over"/>
+               
+          </state>
+
+          <state value="SELECTED">
+
+               <property key="RadioButton.icon" type="idref" value="rcheck_select"/>
+               
+          </state>
+
+          <state value="DISABLED">
+
+               <property key="RadioButton.icon" type="idref" value="rcheck_disable"/>
+               
+          </state>		  
+
+          <state value="PRESSED">
+
+               <property key="RadioButton.icon" type="idref" value="rcheck_on"/>
+               
+          </state>     		  
+
+       <state value="ENABLED AND SELECTED">
+
+           <property key="RadioButton.icon" type="idref" value="rcheck_on"/>
+
+       </state>
+
+      <state value="DISABLED AND SELECTED">
+
+           <property key="RadioButton.icon" type="idref" value="rcheck_on_dis"/>
+
+      </state>
+
+  </style>
+
+
+  <bind style="radiobutton" type="region" key="RadioButton"/>
+
+
+
+
+ 
+ 
+ 
+ 
+ <!--slideTrackSkin declarations-->
+ 
+ 
+ 
+ <style id="slidertrack">
+ 
+ <opaque value="true" />
+    
+    <state>
+    
+    <imagePainter method="SliderTrackBackground" path="image/sliderbar.png" sourceInsets="0 0 0 0" paintCenter="true" stretch="true" center="false"/>
+ 
+    </state>
+    
+ </style>
+
+
+ <bind style="slidertrack" type="region" key="SliderTrack" />
+
+
+
+
+
+
+
+  <!--menubarSkin declarations-->
+
+
+    <style id="menubar">  
+
+            <property key="MenuBar.rolloverEnabled" type="boolean" value="true" />
+
+            <opaque value="true" /> 
+            
+                      <color type="BACKGROUND" value="#c0c0c0" /> 
+                 
+                 <state value="ENABLED">
+                 
+                    <imagePainter method="menuBarBackground" path="img/menubar.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false" />
+                    
+                    <insets top="0" left="0" bottom="0" right="0"  />
+                 
+                 </state>
+                 
+                 <state value="DISABLED">
+                 
+                    <imagePainter method="menuBarBackground" path="img/menubar.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false" />
+                    
+                    <insets top="0" left="0" bottom="0" right="0"  />
+                 
+                 </state>
+ 
+          </style>
+   
+          <bind style="menubar" type="region" key="MenuBar" />
+   
+    <!--menuSkin declarations-->   
+          
+    <style id="menu"> 
+    
+       <!-- Ensure that gap exists between text and icon -->
+    
+       <property key="Menu.textIconGap" type="integer" value="12" />
+       
+       <property key="Menu.crossMenuMnemonic" type="boolean" value="true" />
+       
+       <property key="Menu.menuPopupOffsetX" type="integer" value="0" />
+
+       <property key="Menu.menuPopupOffsetY" type="integer" value="0" />
+       
+       <property key="Menu.rolloverEnabled" type="boolean" value="true" />
+       
+      <!-- Ensure shortKeys-->
+	  
+      <property key="Menu.shortcutKeys" type="idref" value="shortcutkeys" />
+	  
+	  <object id="shortcutkeys" class="java.lang.Integer">
+	  
+	      <int></int>
+	  
+	      <int></int>
+	  
+	      <int></int>
+	  
+	  </object>
+       
+       <!-- Ensure extra margins -->
+       
+       <property key="Menu.margin" type="insets" value="1 0 1 0"/>
+ 
+       <!-- Ensure that menu has display delay turned on for additional style -->
+ 
+       <property key="Menu.delay" type="integer" value="100" />
+
+       <opaque value="true" /> 
+       
+             <state value="ENABLED">
+                 
+                 <imagePainter method="MenuBackground" path="img/menubar.png" sourceInsets="0 0 0 0" stretch="true" />
+                 
+                 <insets top="4" bottom="4" right="7" left="7" />
+                 
+                 <color type="FOREGROUND" value="#BBBBBB" />
+                 
+                 <font name="Calibre" size="12" style="PLAIN"/>
+             
+             </state>
+             
+             
+             <state value="SELECTED">
+                 
+             <imagePainter method="MenuBackground" path="img/menu_press.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false"/> 
+             
+             <insets top="4" left="7" bottom="4" right="7" />
+             
+             <color value="#777777" type="TEXT_FOREGROUND" />
+             
+             <font name="Calibre" size="12" style="PLAIN"/>
+             
+             </state>
+			 
+			 <state value="MOUSEOVER">
+                 
+             <imagePainter method="MenuBackground" path="images/menu_over.png" sourceInsets="2 2 2 2" paintCenter="true" stretch="true" center="false"/> 
+             
+			        <!-- The image used for the menu's select state must be similar to that of the menubar -->
+			 
+             <color value="#777777" type="TEXT_FOREGROUND" />
+             
+             </state>
+             
+             <state value="DISABLED">  
+
+                 <color type="TEXT_FOREGROUND" value="#BBBBBB" /> 
+  
+             </state>      
+  
+ </style>  
+
+
+ <bind style="menu" type="region" key="Menu" /> 
+
+
+ <!-- menuAccelaratorSkin declarations -->
+  
+  
+   
+	<style id="menuaccelarator">
+     
+     <property key="MenuItemAccelerator.margin" type="insets" value="7 0 0 0" />
+		
+		<state>
+		
+			<color type="TEXT_FOREGROUND" value="#000000"/>
+                        
+                        <font name="Calibre" size="9"  style="PLAIN" />
+		
+		</state>
+		
+</style>
+ 
+<bind style="menuaccelarator" type="region" key="MenuItemAccelerator" /> 
+
+
+
+  <!--fileChooser declarations-->
+  
+  
+  <style id="filechooser"> 
+  
+     <imageIcon id="FileChooser_Cancel_Icon" path="image/filechoosercancelicon.png"/> 
+	 
+     <property value="FileChooser_Cancel_Icon" type="idref" key="FileChooser.cancelIcon"/> 
+	 
+     <imageIcon id="FileChooser_Ok_Icon" path="image/filechooserokicon.png"/>
+	 
+     <property value="FileChooser_Ok_Icon" type="idref" key="FileChooser.okIcon"/> 
+	 
+     <imageIcon id="FileChooser_Folder_Icon" path="image/filechooserfoldericon.png"/> 
+	 
+     <property value="FileChooser_Folder_Icon" type="idref" key="FileView.directoryIcon"/> 
+	 
+     <imageIcon id="FileChooser_File_Icon" path="resource/1204876273515_filechooser_file_icon.png"/>
+	 
+     <property value="FileChooser_File_Icon" type="idref" key="FileView.fileIcon"/> 
+	 
+     <imageIcon id="FileChooser_Computer_Icon" path="resource/1204902960359_filechooser_computer_icon.png"/> 
+	 
+     <property value="FileChooser_Computer_Icon" type="idref" key="FileView.computerIcon"/> 
+	 
+     <imageIcon id="FileChooser_Harddisk_Icon" path="resource/1204904675734_filechooser_harddisk_icon.png"/> 
+	 
+     <property value="FileChooser_Harddisk_Icon" type="idref" key="FileView.hardDriveIcon"/> 
+	 
+     <imageIcon id="FileChooser_Floppydriver_Icon" path="resource/1204905250468_filechooser_floppydriver_icon.png"/> 
+	 
+     <property value="FileChooser_Floppydriver_Icon" type="idref" key="FileView.floppyDriveIcon"/> 
+	 
+     <imageIcon id="FileChooser_NewFolder_Icon" path="resource/1204903127984_filechooser_newfolder_icon.png"/> 
+	 
+     <property value="FileChooser_NewFolder_Icon" type="idref" key="FileChooser.newFolderIcon"/> 
+	 
+     <imageIcon id="FileChooser_UpperFolder_Icon" path="resource/1204903072437_filechooser_upperfolder_icon.png"/>
+	 
+     <property value="FileChooser_UpperFolder_Icon" type="idref" key="FileChooser.upFolderIcon"/> 
+	 
+     <imageIcon id="FileChooser_Home_Icon" path="resource/1204904952625_filechooser_home_icon.png"/> 
+	 
+     <property value="FileChooser_Home_Icon" type="idref" key="FileChooser.homeFolderIcon"/> 
+	 
+     <imageIcon id="FileChooser_Details_Icon" path="resource/1204905941328_filechooser_details_icon.png"/> 
+  
+     <property value="FileChooser_Details_Icon" type="idref" key="FileChooser.detailsViewIcon"/> 
+  
+     <imageIcon id="FileChooser_List_Icon" path="resource/1204905931656_filechooser_list_icon.png"/>
+  
+     <property value="FileChooser_List_Icon" type="idref" key="FileChooser.listViewIcon"/>
+
+  <insets right="10" bottom="10" left="10" top="10"/> 
+  
+  </style> 
+  
+  <bind type="region" key="filechooser" style="File Chooser"/>
+ 
+  
+  <!--desktopIconSkin declarations (iconified state) -->
+  
+  
+    <style id="desktopicon">
+	
+	
+	</style>
+	
+	<bind style="desktopicon" type="region" key="DesktopIcon" />
+
+	 
+	
+	<!--desktopPaneSkin declarations-->
+ 	
+	
+	<style id="deskpane">
+	
+	
+	</style>
+	
+	<bind style="deskpane" type="region" key="DesktopPane" />
+
+  
+  
+  <!-- optionPaneSkin declarations -->
+	 
+  
+	<style id="optionpane">
+	
+		<imageIcon id="OptionPane_Error_Icon" path="images/option_error.png"/>
+		
+		<property key="OptionPane.errorIcon" type="idref" value="OptionPane_Error_Icon"/>
+		
+		<imageIcon id="OptionPane_Warn_Icon" path="images/option_warning.png"/>
+		
+		<property key="OptionPane.warningIcon" type="idref" value="OptionPane_Warn_Icon"/>
+		
+		<imageIcon id="OptionPane_Info_Icon" path="images/option_information.png"/>
+		
+		<property key="OptionPane.informationIcon" type="idref" value="OptionPane_Info_Icon"/>
+		
+		<imageIcon id="OptionPane_Question_Icon" path="images/option_question.png"/>
+		
+		<property key="OptionPane.questionIcon" type="idref" value="OptionPane_Question_Icon"/>
+		
+		<insets top="10" left="10" bottom="10" right="10"/>
+	
+	</style>
+	
+	<bind style="optionpane" type="region" key="OptionPane" />
+
+
+
+
+
+  <!--menuItemSkin declarations-->
+
+ 
+  <style id="menuitem">
+     
+		       <insets top="2" left="16" bottom="2" right="16"/>
+
+             <property key="MenuItem.minimumTextOffset" type="integer" value="3" />
+      
+             <property key="MenuItem.checkIconOffset" type="integer" value="20" />
+    	
+                <font name="Calibre" size="12" style="PLAIN" />
+                
+                <state value="ENABLED">
+                    
+			        <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+                    <painter idref="lafpainter" method="menuItemBorder" />
+					
+					<painter idref="lafpainter"  method="menuItemBackground" />
+			
+                    <color type="TEXT_FOREGROUND" value="#000000"/>
+		
+                </state>
+		
+                <state value="MOUSE_OVER">
+			
+                    <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+                    <painter idref="lafpainter" method="menuItemBorder" />
+					
+					<color type="TEXT_FOREGROUND" value="#000000"/>
+		
+                </state>
+		
+                <state value="DISABLED">
+                    
+			        <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+  
+                    <painter idref="lafpainter" method="menuItemBorder" />
+			
+                     <color type="TEXT_FOREGROUND" value="#CCCCCC"/>
+		
+                </state>
+	
+        </style>
+	
+        <bind style="menuitem" type="region" key="MenuItem" />
+
+    <!--  menuItemAcceleratorSkin declarations -->
+	<style id="Menu Item Accelerator">
+		<state>
+			<color type="TEXT_FOREGROUND" value="#770000"/>
+		</state>
+	</style>
+	<bind style="Menu Item Accelerator" type="region" key="MenuItemAccelerator" />
+   
+
+  <!-- popupMenuSkin declarations -->
+
+ 
+   <style id="popupmenu">
+  
+        <painter idref="SPainter" method="popupMenuBackground" />
+   
+		<insets top="4" left="4" bottom="10" right="9"/>
+		
+		<imagePainter  method="popupMenuBorder"  path="images/popupborder.png" sourceInsets="3 3 9 9" paintCenter="false" destinationInsets="3 3 9 9" stretch="true" center="false"/>
+		
+   </style>
+   
+   <bind style="popupmenu" type="region" key="PopupMenu" />
+
+   
+   
+   
+   
+	<!-- popUpMenuSeparatorSkin declarations -->
+	
+	
+	
+	<style id="separator">
+	
+	    <!-- Ensure that the thickness of the separator is set -->
+	
+		<property key="Separator.thickness" type="integer" value="1"/>
+		
+		<opaque value="true"/>
+		
+		<state value="ENABLED">
+		
+			<color type="BACKGROUND" value="#CCBB99"/>
+			
+		</state>
+		
+		<state value="DISABLED">
+		
+			<color type="BACKGROUND" value="#CCCCCC"/>
+			
+	    </state>
+		
+	</style>
+	<bind style="separator" type="region" key="PopupMenuSeparator" />
+ 
+ 
+ 
+  <!-- progressbarSkin declarations -->
+  
+  <style id="progressbar">
+  
+    <opaque value="true" />
+
+        <object id="lafpainter" class="com.influxebrowser.gui.controls.SBitPainter" />
+
+        <painter idref="lafpainter"  method="progressBarForeground" />
+ 
+        <painter idref="lafpainter"  method="progressBarBorder" />
+
+        <imageIcon id="Progressbar_Indication_Image" path="images/pgindication.png"/> 
+  
+        <property value="Progressbar_Indication_Image" type="idref" key="Progressbar.indicationIcon"/>        
+	
+	<property key="ProgressBar.horizontalSize" type="dimension" value="150 20"/>
+	
+        <property key="ProgressBar.vertictalSize" type="dimension" value="20 150"/> 
+	
+	     <state value="ENABLED">
+	
+	       <imagePainter method="progressBarBackground" path="images/progress.png" sourceInsets="4 4 4 4" paintCenter="true" strech="true" />
+	
+	       <insets left="4" right="4" top="4" bottom="4" />
+	
+	     </state>
+    
+  </style>
+ 
+ <bind style="progressbar" type="region" key="ProgressBar" />
+ 
+ 
+ 
+ 
+ 
+ <!--comboboxSkin declarations-->
+ 
+ 
+ <style id="combobox">
+ 
+ 
+        <painter idref="lafpainter" method="comboBoxBorder" />
+	  
+   
+        <!-- Ensure that list renderer uses custom styles while rendering drop down list (overides defaults) -->
+ 
+        <property key="ComboBox.rendererUseListColors" type="boolean" value="false" />
+   
+        <!-- Ensure that UIDefaults are overriden -->
+        
+        <property key="ComboBox.buttonWhenNotEditable" type="boolean" value="true" />
+   
+       <!-- Ensure that combobox textfield and arrow button remain in the pressed state while drop down is visible -->
+
+       <property key="ComboBox.pressedWhenPopupVisible" type="boolean" value="true" />
+
+        <!-- Ensure that combobox drop down is not visible during user tab navigation -->
+
+        <property key="ComboBox.showPopupOnNavigation" type="boolean" value="false" />
+		
+		
+		<!-- Ensure positioning of the combobox drop down -->
+				
+		<property key="ComboBox.popupInsets" type="insets" value="-2 0 2 0" />
+
+                <painter method="comboBoxBorder" idref="SPainter"/>
+        
+       <state>
+        
+            <imagePainter method="comboBoxBackground" path="images/combo_normal.png" sourceInsets="0 0 0 0" center="true" paintCenter="true" stretch="false" />
+            
+            <insets top="0" left="0" bottom="0" right="0" />
+           
+        
+        </state>
+ 
+            <state value="FOCUSED"> 
+            
+            <imagePainter method="comboBoxBackground" path="images/combo_focus.png" sourceInsets="0 0 0 0" center="true" paintCenter="false" stretch="false" />
+            
+            <insets top="0" left="0" bottom="0" right="0" />
+            
+       </state>
+ 
+ </style>
+ 
+ <bind style="combobox" type="region" key="ComboBox" />
+ 
+ 
+ 
+
+ <!--scrollbarSkin declaration-->
+ 
+ 
+ <style id="scrollbar">
+ 
+        <property key="ScrollBar.allowsAbsolutePositioning" type="boolean" value="false" />
+
+        <property key="ScrollBar.button" /> 
+
+   <insets top="2" left="2" right="2" bottom="2"/>
+     
+        <state> 
+    
+           <color value="#000000" type="BACKGROUND" /> 
+      
+       </state> 
+    
+       <state value="MOUSE_OVER"> 
+    
+              <color value="#0000ff" type="BACKGROUND" /> 
+      
+       </state> 
+    
+  </style> 
+
+
+ <bind style="scrollbar" type="region" key="ScrollbarThumb"/> 
+ 
+
+ 
+ <!--listSkin declarations-->
+ 
+ 
+ <style id="list">
+
+   <opaque value="true" />
+   
+        <insets top="1" left="1" right="1" bottom="1" />
+		
+		<!-- Ensure that UIDefaults are not applied -->
+   
+		<property key="List.rendererUseUIBorder" type="boolean" value="false"/>
+		
+		<!-- Ensure the height of the list cell is custom set -->
+         		
+		<property key="List.cellHeight" type="integer" value="21"/>
+
+		<!-- Ensure that UIDefaults are not applied -->
+		
+    <property key="List.rendererUseListColors" type="boolean" value="false" /> 
+    
+    <state value="ENABLED"> 
+    
+        <color value="#323232" type="BACKGROUND"/>
+    </state>
+
+    <state value="DISABLED">
+	
+        <color value="#ffffff" type="BACKGROUND"/> 
+         
+    </state>
+
+    <state value="SELECTED">
+	
+        <color value="#00BAFF" type="TEXT_BACKGROUND"/>
+         
+        <color value="BLACK" type="TEXT_FOREGROUND"/> 
+        
+    </state> 
+</style>     
+<bind style="list" type="region" key="List"/> 
+
+
+
+
+  <!--Cascading or Overriding Skin Styles for Custom Components-->
+  
+  <!--All Styles are applied as at runtime-->
+
+      
+	  
+
+<style id="iconbutton">
+       
+       <opaque value="true" />
+
+       <!--Ensure that text is Shifted down by 1 pixel when button is clicked-->
+       
+       <property key="Button.textShiftOffset" type="integer"  value="1" />
+
+       <!--Ensure that button background area is not painted when button is clicked-->
+        
+       <property key="Button.contentAreaFilled" type="boolean" value="false" />
+        
+       <!--Ensure that button margins are boldened-->      
+ 
+       <property key="Button.margin" type="insets" value="0 0 0 0"/>
+       
+   <state value="ENABLED">
+       
+   <imagePainter method="buttonBorder" path="images/buttonborder_enabled.png" paintCenter="true" sourceInsets="5 5 5 5" stretch="true" center="false" />    
+   
+   <insets left="0" right="0" top="0" bottom="0" />
+   
+   <font name="Myriad Pro" size="10" style="PLAIN" />
+       
+   <color value="#999999" type="TEXT_FOREGROUND" />
+   
+   </state>
+   
+   <state value="MOUSE_OVER">
+        
+       
+   <imagePainter method="buttonBorder" path="images/buttonborder_hover.png" paintCenter="false" sourceInsets="5 5 5 5" stretch="true" center="false" />
+     
+      <insets left="5" right="5" top="5" bottom="5" />
+      
+      <font name="Myriad Pro" size="10" style="BOLD" />
+       
+      <color value="#555555" type="TEXT_FOREGROUND" />
+   
+   </state> 
+   
+   <state value="PRESSED">
+    
+       
+<imagePainter method="buttonBorder" path="images/buttonborder_pressed.png"  paintCenter="true" sourceInsets="5 5 5 5" stretch="true" center="false"/>
+   
+       <insets left="5" right="5" top="5" bottom="5" />
+       
+       <font name="Myriad Pro" size="10" style="BOLD" />
+       
+       <color value="#555555" type="TEXT_FOREGROUND" />
+       
+   </state>
+   
+   </style>
+   
+   <bind  style="iconbutton" type="name" key="Button.IconButton" />
+
+
+
+  <style id="textbox">
+
+    <!--Ensure that color of textfield cursor is custom defined-->
+
+    <property key="TextField.caretForeground" type="idref" value="caret" />
+
+    <!-- Ensure that color of-->
+
+    <property key="TextField.caretBlinkrate" type="integer" value="350" />
+
+    <color id="caret" value="#555555" type="FOREGROUND" />
+
+    <opaque value="true" />
+
+    <color value="#ffffff" type="BACKGROUND"/>
+
+    <state>
+
+      <imagePainter method="textFieldBorder" path="images/textfieldbgs.png" sourceInsets="0 0 0 0" paintCenter="false" />
+
+      <insets top="0" left="0" bottom="0" right="0"/>
+
+
+    </state>
+
+    <state value="MOUSE_OVER">
+
+      <imagePainter method="textFieldBorder" path="images/textfieldbgs.png" sourceInsets="0 0 0 0" paintCenter="false"/>
+
+      <insets top="0" left="0" bottom="0" right="0"/>
+
+    </state>
+
+  </style>
+
+
+  <bind style="textbox" type="name" key="TextField.searchBox"/>
+	  
+</synth>
